@@ -2,16 +2,25 @@
 * {
   font-family: "arial,'pingfang sc',stheiti,'microsoft yahei',sans-serif";
   color: #000000BF;
+  padding: 0;
+  margin: 0;
 }
-body{
+
+html,
+body {
+  height: 100%;
+}
+
+body {
   /* 模仿原网站，设置出y轴 */
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
+  /* justify-content: space-between; */
 }
 
 /* 首部信息 */
-.page-header{
+.page-header {
   /* 问题，字体占位的问题！ */
   /* font-size: 13px; */
   display: flex;
@@ -21,32 +30,33 @@ body{
   justify-content: space-between;
 }
 
-.page-header .header-nav{
+.page-header .header-nav {
   display: flex;
   align-items: center;
 }
 
-.page-header .header-nav li{
+.page-header .header-nav li {
   display: inline-block;
   margin-left: 20px
 }
 
 .page-header .header-nav li a,
-.header-info{
+.header-info {
   font-size: 13px;
   line-height: 24px;
 }
+
 /* 将第一个元素设置颜色 */
-.page-header li:first-child a{
+.page-header li:first-child a {
   color: #ff5a34;
   font-weight: 700;
 }
 
 /* 利用伪元素增加三角形 */
-.page-header li:last-child:after{
+.page-header li:last-child:after {
   content: "";
   position: relative;
-  top: 13px;
+  top: 15px;
   left: 2px;
   width: 0;
   height: 0;
@@ -55,21 +65,28 @@ body{
   border-right: 4px solid transparent;
 }
 
+/* 右侧的天气和无障碍提示的信息 */
 .header-info {
   display: flex;
   font-size: 12px;
   align-items: center;
 }
 
-.header-info .weather{
+.header-info .weather {
   align-items: center;
 }
 
-.header-info .weather img{
+.header-info .weather span {
+  align-items: center;
+
+}
+
+.header-info .weather img {
   width: 16px;
   margin: 0 5px;
 }
-.header-info .line{
+
+.header-info .line {
   position: relative;
   bottom: 2px;
   width: 1px;
@@ -77,11 +94,11 @@ body{
   margin: 5px 26px 0;
   background-color: red;
 }
-.header-info .type{
-  
-  margin-right: 26px;
 
+.header-info .type {
+  margin-right: 26px;
 }
+
 /* .header-info .weather::after{
   content: '';
   position: relative;
@@ -93,37 +110,149 @@ body{
   margin: 5px 10px 0;
 } */
 
+
 /* 设置logo和搜索栏 */
 .page-body {
-  padding-top: 200px;
-  text-align: center;
+  flex: 1;
+  padding-top: 158px;
 }
 
-.page-body .logo-wrapper img{
+.page-body .logo-wrapper {
+  height: 140px;
   width: 440px;
+  margin: auto;
 }
 
-.page-body .search-wrapper{
+.page-body .logo-wrapper img {
+  height: 100%;
+}
+
+/* 搜索栏 */
+.page-body .search-wrapper {
   position: relative;
-}
-
-.page-body .search-wrapper input{
-  width: 656px;
+  width: 489px;
   height: 42px;
+  border-radius: 3px 3px 0 0;
+  border: 1px solid #ababab;
   padding: 0 154px 0 10px;
-  border: 1px red solid;
-  border-radius: 2px;
+  margin: auto;
+  display: flex;
 }
 
-.page-body .search-wrapper .search-btn{
-  /* position: absolute; */
-  /* left: 100px; */
-  /* top: 10px; */
-  right: 10px;
-  width: 99px;
-  height: 42px;
-  border: none;
-  border-left: 2px solid #999;
+.page-body .search-wrapper .search {
+  width: 489px;
+}
+
+.page-body .search-wrapper input {
+  width: 489px;
+  height: 18px;
   font-size: 16px;
-  background-color: transparent;
+  margin: 12px 0;
+  border: 1px red solid;
+  border: none;
+  outline: none;
+}
+
+.page-body .search-wrapper .search-btn {
+  position: absolute;
+  /* left: 100px; */
+  top: 0px;
+  right: 0px;
+  /* 问题：盒模型到底是哪个 */
+  width: 100px;
+  line-height: 42px;
+  color: #000;
+  border: none;
+  border-left: 1px solid #e6e6e6;
+  font-size: 16px;
+  background-color: #fafafa;
+}
+
+/* 底部信息调整 */
+.page-footer {
+  /* 块级元素居中 */
+  /* width: 1000px; */
+  /* margin-right: 500px; */
+  font-size: 12px;
+  padding-bottom: 28px;
+  display: flex;
+  justify-content:center;
+}
+.page-footer a:hover{
+  color: #000;
+}
+
+.page-footer p{
+  height: 22px;
+}
+
+.page-footer a,
+.page-footer p,
+.page-footer span{
+  color: #7f7f7f;
+  text-decoration: none;
+  text-align: center;
+  font-family: "arial,'pingfang sc',stheiti,'microsoft yahei',sans-serif";
+}
+
+.page-footer .links i{
+  display: inline-block;
+  background-image: url(../img/ico_ft_8795b8d.gif);
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  width: 13px;
+  height: 13px;
+  margin: 4px 5px 0 0;
+}
+.page-footer .links a.icon2 i{
+  background-position: 0 -29px;
+}
+.page-footer .links a.icon3 i{
+  background-position: 0 -58px;
+}
+/* hover的时候精灵图位置变化 */
+.page-footer .links a.icon1:hover i{
+  background-position: 0px -15px;
+}
+.page-footer .links a.icon2:hover i{
+  background-position: 0px -43px;
+}
+.page-footer .links a.icon3:hover i{
+  background-position: 0px -72px;
+}
+
+.page-footer .p1 a.wangan i{
+  display: inline-block;
+  background: url(../img/wangan.png) 100% 4px no-repeat; 
+  width: 14px;
+  height: 15px;
+  margin: 4px 5px 0 0;
+}
+.page-footer .links a{
+  height: 25px;
+  color: #4c4c4c;
+}
+
+.page-footer p a{
+  line-height: 22px;
+}
+
+.page-footer .line {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  bottom: 2px;
+  width: 1px;
+  height: 12px;
+  margin: 5px 10px 0;
+  background-color: #e4e4e4;
+}
+.page-footer a{
+  /* line-height: 22px; */
+}
+
+.page-footer .footer-show img{
+  width: 86px;
+  height: 40px;
+  margin: 46px 0 0 8px;
 }
