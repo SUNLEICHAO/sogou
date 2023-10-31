@@ -89,7 +89,7 @@ body {
   /* display: inline-block; */
   /* height: 24px; */
   font-size: 12px;
-  font-family: "arial,'pingfang sc',stheiti,'microsoft yahei',sans-serif";
+  font-family: arial,'pingfang sc',stheiti,'microsoft yahei',sans-serif;
   /* align-items: center; */
 }
 
@@ -99,7 +99,7 @@ body {
 
 .header-info .weather img {
   width: 16px;
-  margin: 0 3px 0 5px;
+  margin: 0 4px 0 5px;
   position: relative;
   top: 3px;
 }
@@ -148,7 +148,8 @@ body {
 /* 搜索栏 */
 .page-body .search-wrapper {
   position: relative;
-  width: 489px;
+  /* width: 489px; */
+  width: 656px;
   height: 42px;
   border-radius: 3px 3px 0 0;
   border: 1px solid #ababab;
@@ -205,20 +206,21 @@ body {
   display: flex;
   justify-content:center;
 }
+.page-footer .footer-info{
+  width: 830px;
+  padding-left: 70px;
+}
 .page-footer a:hover{
   color: #000;
 }
 
-.page-footer p:nth-child(1){
-  line-height: 25px;
-}
-.page-footer p:nth-child(2),
-.page-footer p:nth-child(4){
+.page-footer p{
   line-height: 22px;
   background-color: #eee;
+
 }
 .page-footer p:nth-child(3){
-  line-height: 14px;
+  /* line-height: 14px; */
 }
 
 .page-footer a,
@@ -227,7 +229,7 @@ body {
   color: #7f7f7f;
   text-decoration: none;
   text-align: center;
-  font-family: "arial,'pingfang sc',stheiti,'microsoft yahei',sans-serif";
+  font-family: arial,'pingfang sc',stheiti,'microsoft yahei',sans-serif;
 }
 
 .page-footer p.links a{
@@ -242,6 +244,8 @@ body {
   width: 13px;
   height: 13px;
   margin: 4px 5px 0 0;
+  position: relative;
+  top: 2px;
 }
 .page-footer .links a.icon2 i{
   background-position: 0 -29px;
@@ -263,11 +267,10 @@ body {
 .page-footer .p1 a.wangan i{
   display: inline-block;
   background: url(../img/wangan.png) 100% 4px no-repeat; 
-  width: 14px;
+  width: 13px;
   height: 15px;
-  margin: 0px 5px 0 0;
+  /* margin: 0px 5px 0 0; */
 }
-
 
 .page-footer p a{
   line-height: 22px;
@@ -280,15 +283,20 @@ body {
   bottom: 2px;
   width: 1px;
   height: 12px;
-  margin: 5px 10px 0;
+  margin: 5px 7px 0;
   background-color: #e4e4e4;
 }
 .page-footer a{
   /* line-height: 22px; */
 }
 
+/* 右侧，适老化提示图片 */
 .page-footer .footer-show img{
   width: 86px;
   height: 40px;
   margin: 46px 0 0 8px;
+  position: relative;
+  bottom: 1px;
+  /* bottom: -6px; */
+  /* left: -6px; */
 }
