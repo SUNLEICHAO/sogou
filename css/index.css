@@ -25,25 +25,30 @@ body {
   /* font-size: 13px; */
   display: flex;
   background-color: antiquewhite;
-  margin: 10px 0;
+  margin: 11px 0;
   height: 24px;
   justify-content: space-between;
 }
 
+/* 左侧的导航选项 */
 .page-header .header-nav {
   display: flex;
   align-items: center;
+  /* 问题，这里的上下需要调整 */
+  position: relative;
+  top: -1px;
 }
 
 .page-header .header-nav li {
   display: inline-block;
-  margin-left: 20px
+  margin-left: 20px;
 }
 
 .page-header .header-nav li a,
 .header-info {
   font-size: 13px;
   line-height: 24px;
+  text-decoration: none;
 }
 
 /* 将第一个元素设置颜色 */
@@ -70,20 +75,33 @@ body {
   display: flex;
   font-size: 12px;
   align-items: center;
+  /* 问题，这里的位置需要调整 */
+  position: relative;
+  top: -2px;
 }
 
-.header-info .weather {
-  align-items: center;
+.header-info .weather::before{
+  content: "";
+  display: table;
+}
+
+.header-info .weather span{
+  /* display: inline-block; */
+  /* height: 24px; */
+  font-size: 12px;
+  font-family: "arial,'pingfang sc',stheiti,'microsoft yahei',sans-serif";
+  /* align-items: center; */
 }
 
 .header-info .weather span {
-  align-items: center;
-
+  /* align-items: center; */
 }
 
 .header-info .weather img {
   width: 16px;
-  margin: 0 5px;
+  margin: 0 3px 0 5px;
+  position: relative;
+  top: 3px;
 }
 
 .header-info .line {
@@ -91,12 +109,12 @@ body {
   bottom: 2px;
   width: 1px;
   height: 14px;
-  margin: 5px 26px 0;
+  margin: 5px 28px 0;
   background-color: red;
 }
 
 .header-info .type {
-  margin-right: 26px;
+  margin-right: 25px;
 }
 
 /* .header-info .weather::after{
@@ -114,7 +132,7 @@ body {
 /* 设置logo和搜索栏 */
 .page-body {
   flex: 1;
-  padding-top: 158px;
+  padding-top: 156px;
 }
 
 .page-body .logo-wrapper {
@@ -153,6 +171,9 @@ body {
   outline: none;
 }
 
+.page-body .search-wrapper:hover{
+  border:  solid 1px #666;;
+}
 .page-body .search-wrapper .search-btn {
   position: absolute;
   /* left: 100px; */
@@ -166,6 +187,12 @@ body {
   border-left: 1px solid #e6e6e6;
   font-size: 16px;
   background-color: #fafafa;
+  cursor: pointer;
+}
+.page-body .search-wrapper .search-btn:hover{
+  background-color: #f2f2f2;
+  /* background-color: red; */
+  
 }
 
 /* 底部信息调整 */
@@ -182,8 +209,16 @@ body {
   color: #000;
 }
 
-.page-footer p{
-  height: 22px;
+.page-footer p:nth-child(1){
+  line-height: 25px;
+}
+.page-footer p:nth-child(2),
+.page-footer p:nth-child(4){
+  line-height: 22px;
+  background-color: #eee;
+}
+.page-footer p:nth-child(3){
+  line-height: 14px;
 }
 
 .page-footer a,
@@ -193,6 +228,10 @@ body {
   text-decoration: none;
   text-align: center;
   font-family: "arial,'pingfang sc',stheiti,'microsoft yahei',sans-serif";
+}
+
+.page-footer p.links a{
+  color: #4c4c4c;
 }
 
 .page-footer .links i{
@@ -226,12 +265,9 @@ body {
   background: url(../img/wangan.png) 100% 4px no-repeat; 
   width: 14px;
   height: 15px;
-  margin: 4px 5px 0 0;
+  margin: 0px 5px 0 0;
 }
-.page-footer .links a{
-  height: 25px;
-  color: #4c4c4c;
-}
+
 
 .page-footer p a{
   line-height: 22px;
